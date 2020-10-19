@@ -139,7 +139,7 @@ MediaAccess::open (const Url& o_url, const Pathname & preferred_attach_point)
         bool use_network = ( networkenv && strcmp(networkenv, "1" ) == 0 );
         if ( use_network ) {
           WAR << "network backend manually enabled." << endl;
-          zyppng::MediaHandlerNetwork *hdl = new zyppng::MediaHandlerNetwork (url,preferred_attach_point);
+          zyppng::MediaNetwork *hdl = new zyppng::MediaNetwork (url,preferred_attach_point);
 
           UrlResolverPlugin::HeaderList::const_iterator it;
           for ( const auto & el : custom_headers ) {
